@@ -1,0 +1,34 @@
+.weather-warpper {
+  width: 1200px;
+  height: 800px;
+  border-radius: 1%;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  .search {
+    width: 400px;
+    height: 300px;
+    background-color: yellow;
+  }
+  .detail {
+    width: 400px;
+    height: 500px;
+    background-color: gray;
+  }
+  .chart {
+    width: 800px;
+    height: 600px;
+  }
+  .weathergroup {
+    width: 800px;
+    height: 200px;
+    ul {
+      display: flex;
+      flex-flow: nowrap row;
+      li {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+      }
+    }
+  }
+}
