@@ -2,32 +2,92 @@
   width: 1200px;
   height: 800px;
   border-radius: 1%;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-  .search {
-    width: 400px;
-    height: 300px;
-    background-color: yellow;
-  }
-  .detail {
-    width: 400px;
-    height: 500px;
-    background-color: gray;
-  }
-  .chart {
-    width: 800px;
-    height: 600px;
-  }
-  .weathergroup {
-    width: 800px;
-    height: 200px;
-    ul {
+  display: flex;
+  box-shadow: 0 1rem 3rem rgb(31 45 61 / 13%);
+  font-size: 17px;
+  .leftside {
+    .search {
+      width: 400px;
+      height: 300px;
       display: flex;
-      flex-flow: nowrap row;
-      li {
-        width: 200px;
-        height: 200px;
-        background-color: pink;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      .cityselect {
+        font-size: 50px;
+      }
+      input {
+        width: 250px;
+        height: 40px;
+        font-size: 30px;
+        text-align: center;
+        outline: none;
+        background-color: #f3f6fa;
+        border: none;
+        border-radius: 1em;
+        box-shadow: 0 1rem 3rem rgb(31 45 61 / 13%);
+      }
+    }
+    .detail {
+      display: flex;
+      position: relative;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      width: 400px;
+      height: 500px;
+      div:nth-child(1) {
+        color: #696969;
+        padding-bottom: 200px;
+      }
+      div:nth-child(2) {
+        position: absolute;
+        top: 157px;
+        left: 90px;
+        font-size: 100px;
+      }
+      div:nth-child(3) {
+        position: absolute;
+        font-size: 70px;
+        top: 176px;
+        right: 100px;
+        span {
+          position: absolute;
+          top: 0;
+          font-size: 30px;
+        }
+      }
+      div:nth-child(4) {
+        position: absolute;
+        top: 280px;
+        font-size: 40px;
+      }
+    }
+  }
+  .rightside {
+    .chart {
+      width: 800px;
+      height: 600px;
+      padding-top: 100px;
+    }
+    .weathergroup {
+      width: 800px;
+      height: 200px;
+      ul {
+        display: flex;
+        flex-flow: nowrap row;
+        li {
+          display: flex;
+          margin-top: -5%;
+          flex-flow: column nowrap;
+          justify-content: center;
+          align-items: center;
+          width: 200px;
+          height: 200px;
+          i {
+            font-size: 75px;
+          }
+        }
       }
     }
   }

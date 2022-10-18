@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef, useState } from 'react'
 import ReactECharts from 'echarts-for-react'
 import dayjs from 'dayjs'
-
+import 'qweather-icons/font/qweather-icons.css'
 import { cityContext } from '../Content'
 
 import { getCityList, currentWeather, nextDaysWeather } from '../../api/weather'
@@ -16,14 +16,13 @@ export default function Weather() {
     title: {
       text: 'Temperature',
       fontWeight: 'bold',
-      top: '100px',
-      left: '40px'
+      left: '5%'
     },
     grid: {
-      top: '150px',
-      left: '50px',
-      width: '700px',
-      height: '300px'
+      top: '10%',
+      bottom: '7%',
+      left: '7%',
+      right: '7%'
     },
     xAxis: {
       type: 'category',
@@ -34,7 +33,8 @@ export default function Weather() {
       })
     },
     yAxis: {
-      type: 'value'
+      type: 'value',
+      scale: true
     },
     series: [
       {
@@ -151,9 +151,9 @@ export default function Weather() {
   return (
     <>
       <div className="weather-warpper">
-        <div style={{ float: 'left' }}>
+        <div className="leftside">
           <div className="search">
-            <div>city:{city.adm2 || ''}</div>
+            <div className="cityselect">city:{city.adm2 || ''}</div>
             <div>
               <input
                 type="text"
@@ -165,16 +165,22 @@ export default function Weather() {
             </div>
           </div>
           <div className="detail">
-            <div>now:{detail.obsTime}</div>
-            <div>temp:{detail.temp}</div>
-            <div>feelslike:{detail.feelsLike}</div>
+            <div>{dayjs(detail.obsTime).format('h:mm A,ddd,MMM D,YYYY')}</div>
+            <div>
+              <i className={`qi-${detail.icon}`}></i>
+            </div>
+            <div>
+              {detail.temp}
+              <span>℃</span>
+            </div>
+            <div>{detail.text}</div>
             <div>humidity:{detail.humidity}</div>
             <div>windSpeed:{detail.windSpeed}</div>
           </div>
         </div>
-        <div style={{ float: 'right' }}>
+        <div className="rightside">
           <div className="chart">
-            <ReactECharts option={options} style={{ height: '100%', width: '100%' }} notMerge={true} />
+            <ReactECharts option={options} notMerge={true} lazyUpdate={false} style={{ height: '400px' }} />
           </div>
           <div className="weathergroup">
             <ul>
@@ -182,9 +188,12 @@ export default function Weather() {
                 return [
                   ...pre,
                   <li key={index}>
-                    <div>fxDate:{cur.fxDate}</div>
-                    <div>tempMax:{cur.tempMax}</div>
-                    <div>tempMin:{cur.tempMin}</div>
+                    <div>
+                      <i className={`qi-${cur.iconDay}`}></i>
+                    </div>
+                    <div>Date:{cur.fxDate}</div>
+                    <div>maxTemp:{cur.tempMax}</div>
+                    <div>minTemp:{cur.tempMin}</div>
                     <div>humidity:{cur.humidity}</div>
                   </li>
                 ]
