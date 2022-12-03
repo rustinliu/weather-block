@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -10,18 +11,21 @@
     "dayjs": "^1.11.5",
     "echarts": "^5.4.0",
     "echarts-for-react": "^3.0.2",
-    "minireset.css": "^0.0.7",
+    "lodash": "^4.17.21",
+    "normalize.css": "^8.0.1",
     "qweather-icons": "^1.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
     "react-scripts": "5.0.1",
+    "styled-components": "^5.3.6",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^7.0.0",
     "sass": "^1.55.0"
   }
 }

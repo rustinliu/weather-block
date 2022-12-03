@@ -1,0 +1,14 @@
+@import url(./common.scss);
+@import url(./reset.scss);
+
+body {
+  background-color: #f3f6fa;
+}
+
+#app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

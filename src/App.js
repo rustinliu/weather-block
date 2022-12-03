@@ -1,14 +1,14 @@
-import Content from './compnents/Content'
-import Weather from './compnents/Weather'
-import 'minireset.css'
-import './app.scss'
+// import Content from './compnents/Content'
+// import Weather from './compnents/Weather'
+// import './app.scss'
+
+import Weather from './compnents/weather'
+
 function App() {
   return (
-    <>
-      <Content>
-        <Weather />
-      </Content>
-    </>
+    <div id="app">
+      <Weather></Weather>
+    </div>
   )
 }
 
